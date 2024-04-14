@@ -13,6 +13,15 @@
     cursor: pointer;
 }
 
+/* Container for the submit button */
+.button-container {
+    background-color: rgb(130, 191, 220); /* Light blue background */
+    padding: 20px; /* Spacing around the submit button */
+    display: inline-block; /* Allows the container to fit the size of the button */
+    border-radius: 8px; /* Optional: rounded corners for the container */
+}
+
+
 /* submit button */
 .upload {
     background-color: rgb(195, 196, 196); 
