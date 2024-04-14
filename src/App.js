@@ -83,6 +83,7 @@ function App() {
       <body>
         <p className='text'> Here is some text.</p>
         <div className='main'>
+          {/* sidebar */}
           <div className="lefthalf"> 
             {CS04profs.map((CS04prof, index) => (
               <div key={index}>
@@ -95,8 +96,10 @@ function App() {
             </div>
               ))}
           </div>
+          {/* course description */}
           <div className="righthalf"> 
-            <h2>{CS04profs[selectedProfIndex].course_code} {courseName}<br></br>{CS04profs[selectedProfIndex].name}</h2>
+            <h2>{CS04profs[selectedProfIndex].course_code} {courseName}<br></br></h2>
+            <p className = 'profname'>{CS04profs[selectedProfIndex].name}</p>
             {CS04profs[selectedProfIndex].syllabusLink !== 0 && (
               <>
               <span>{CS04profs[selectedProfIndex].description}<br></br><p></p>Here is the <span onClick={() => openSyllabusPreview(CS04profs[selectedProfIndex].syllabusLink)} className = "link">syllabus</span>.</span>

@@ -1,27 +1,27 @@
 /* unselected sidebar option */
 .unselected {
-    background-color: rgb(240, 229, 216); 
+    background-color: rgb(201, 227, 245); 
     border: none;
-    color: black;
+    color: rgb(19, 35, 72);
     padding: 15px 15px;
     width: 100%;
     text-align: left;
+    font-family: Verdana, sans-serif;
     text-decoration: none;
     display: inline-block;
-    font-size: calc(10px + 2vmin);
+    font-size: calc(6px + 2vmin);
     cursor: pointer;
 }
 
 /* submit button */
 .upload {
-  background-color: rgb(240, 229, 216); 
+  background-color: rgb(195, 196, 196); 
     border: none;
-    color: black;
+    color: rgb(24, 25, 25);
     padding: 15px 15px;
-    width: 20%;
+    width: 130px;
     text-align: center;
     margin: 10px;
-    text-decoration: none;
     display: inline-block;
     font-size: calc(10px + 2vmin);
 }
@@ -35,15 +35,16 @@
 
 /* toggled selected button on side menu */
 .selected {
-  background-color: rgb(227, 200, 168);
-  color: black;
+  background-color: rgb(130, 191, 220);
+  color: (19, 35, 72);
   border: none;
   padding: 15px 15px;
   width: 100%;
   text-align: left;
   text-decoration: none;
+  font-family: Verdana, sans-serif;
   display: inline-block;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(6px + 2vmin);
   cursor: pointer;
 }
 /* entire webpage... lol*/
@@ -63,7 +64,7 @@
 }
 /* Top section */
 .App-header {
-  background-color: #282c34;
+  background-color: #5c7d67;
   min-height: 20%;
   display: flex;
   padding-left: 5%;
@@ -75,16 +76,22 @@
 }
 /* header text - used for app title */
 h2 {
-  font-size: calc(15px + 2vmin);
+  font-size: calc(14px + 2vmin);
   padding-top: 0pt;
+  margin-top: 0pt;
+  font-family: Verdana, sans-serif;
 }
 
+.profname {
+  font-size: calc(11px + 2vmin);
+}
 
 /* body text */
 .text {
-  color: "69, 69, 69";
+  color: rbg("69, 69, 69");
   font-size: calc(10px + 2vmin);
   padding-left: 5%;
+  font-family: Verdana, sans-serif;
 }
 
 
@@ -109,7 +116,7 @@ h2 {
   margin: 0 auto; /* Center the container horizontally */
   padding: 10pt 30pt; /* Add padding 10pt to the top and bottom, 30pt to the left and right */
   font-size: calc(8px + 2vmin);
-  color: black;
+  color: rgb(46, 47, 50);
 }
 
 /* sidemenu part w/ profs */
@@ -117,7 +124,7 @@ h2 {
   width: 30%;
   height: 100%;
   padding: 15pt;
-  background: rgb(240, 229, 216);
+  background: rgb(201, 227, 245);
 }
 
 /* main course description section */
@@ -140,11 +147,12 @@ h2 {
 .topnav a {
   float: left;
   display: block;
-  color: black;
+  color: rgb(19, 35, 72);
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
+  font-family: Verdana, sans-serif;
 }
 
 .topnav a:hover {
@@ -166,6 +174,7 @@ h2 {
   margin-top: 8px;
   font-size: 17px;
   border: none;
+  font-family: Verdana, sans-serif;
 }
 
 .topnav .search-container button {
@@ -194,8 +203,10 @@ h2 {
     width: 100%;
     margin: 0;
     padding: 14px;
+    font-family: Verdana, sans-serif;
   }
   .topnav input[type=text] {
     border: 1px solid #ccc;  
+    font-family: Verdana, sans-serif;
   }
 }
