@@ -10,6 +10,17 @@ button {
     font-size: calc(10px + 2vmin);
 }
 
+.link {
+  color: blue; /* Set the link text color */
+  text-decoration: underline; /* Add underline */
+  cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+.selected {
+  background-color: rgb(227, 200, 168);
+  color: black;
+}
+
 .App {
   text-align: left;
 }
@@ -76,7 +87,7 @@ h2 {
 .lefthalf {
   width: 30%;
   height: 400px;
-  padding: 15pt 30pt;
+  padding: 15pt;
   background: rgb(240, 229, 216);
 }
 

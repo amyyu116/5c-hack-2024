@@ -5,20 +5,35 @@ function App() {
   const CS04profs = [
     {
       name: 'Jane Doe',
-      syllabus: 'This course covers basic programming concepts.'
+      description: 'This course covers basic programming concepts.',
+      syllabusLink: 'janeDoeSyllabus.pdf'
     },
     {
       name: 'John Doe',
-      syllabus: 'This course covers differential calculus.'
+      description: 'This course covers differential calculus.',
+      syllabusLink: 'johnDoeSyllabus.pdf'
     },
+    {
+      name: 'Jack Doe',
+      description: 'This course has no information on it.',
+      syllabusLink: 0
+    }
     // Add more professors as needed
   ];
 
-  const [selectedProfIndex, setSelectedProfIndex] = useState(null);
+  // changes shown prof on click
+  const [selectedProfIndex, setSelectedProfIndex] = useState(0);
 
   const handleProfSelection = (index) => {
     setSelectedProfIndex(index);
   };
+
+  // pdf viewer function
+
+  const openSyllabusPreview = (url) => {
+    window.open(url, '_blank', 'width=800,height=600');
+  };
+
 
   // AI-handling
 
@@ -55,14 +70,28 @@ function App() {
           
             {CS04profs.map((CS04prof, index) => (
               <div key={index}>
-              <button onClick={() => handleProfSelection(index)}>{CS04prof.name}</button>
+              <button 
+                  onClick={() => handleProfSelection(index)}
+                  className={selectedProfIndex === index ? 'selected' : ''}
+                >
+                  {CS04prof.name}
+                </button>
             </div>
               ))}
           </div>
           <div className="righthalf"> 
             <h2>(Course Code) Course Name</h2>
             {selectedProfIndex !== null && (
-              <p>{CS04profs[selectedProfIndex].syllabus}</p>
+              // this will be course description
+              <>
+              <p>{CS04profs[selectedProfIndex].description}</p>
+              </>
+
+            )}
+            {CS04profs[selectedProfIndex].syllabusLink !== 0 && (
+              <>
+              <span>Here is the <span onClick={() => openSyllabusPreview(CS04profs[selectedProfIndex].syllabusLink)} className = "link">syllabus</span>.</span>
+              </>
             )}
             <p>{aiText}</p>
           </div>
