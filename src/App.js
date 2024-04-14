@@ -79,9 +79,23 @@ function App() {
   }, [CS04profs, selectedProfIndex]);
 
   // search handlers
+  // dropdown items
+  
 
   const [isOpen, setIsOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
+
+  const filteredItems = [
+    { name: 'Intro to Caribbean Literature' },
+    { name: 'Intermediate Ladder Theory' },
+    { name: 'Media Studies Electives' },
+    { name: 'Algorithms' },
+    { name: 'SCR Core' },
+    { name: 'Introductory Physics' },
+    { name: 'Advanced Bioinformatics' }
+  ].filter(item =>
+    item.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
   
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
@@ -113,27 +127,24 @@ const handleFileSubmit = (event) => {
 
   return (
     <div className="App">
+      {/* header */}
       <header className="App-header">
         <h2>COURSE CRUSHER >:3C</h2>
-  <div className="dropdown">
-  <input
-          type="text"
-          placeholder="Search..."
-          value={searchTerm}
-          onChange={handleSearch}
-        />
-      <button className="dropbtn" onClick={toggleDropdown}>Dropdown</button>
-      <div id="myDropdown" className={`dropdown-content ${isOpen ? 'show' : ''}`}>
-        
-        <a href="#about">About</a>
-        <a href="#base">Base</a>
-        <a href="#blog">Blog</a>
-        <a href="#contact">Contact</a>
-        <a href="#custom">Custom</a>
-        <a href="#support">Support</a>
-        <a href="#tools">Tools</a>
-      </div>
-    </div>
+        <div className="dropdown">
+        <input
+                type="text"
+                placeholder="Search..."
+                value={searchTerm}
+                onChange={handleSearch}
+                onClick={toggleDropdown}
+              />
+            <button className="dropbtn" >Dropdown</button>
+            <div id="myDropdown" className={`dropdown-content ${isOpen ? 'show' : ''}`}>
+              {filteredItems.map((item, index) => (
+                <a key={index} onClick={toggleDropdown}>{item.name}</a>
+              ))}
+            </div>
+          </div>
       </header>
       <body>
         <p className='text'> {courseName}</p>
@@ -156,6 +167,11 @@ const handleFileSubmit = (event) => {
               <>
               <span>{CS04profs[selectedProfIndex].description}<br></br><p></p>Here is the <span onClick={() => openSyllabusPreview(CS04profs[selectedProfIndex].syllabusLink)} className = "link">syllabus</span>.</span>
               <p>{aiText}</p>
+              </>
+            )}
+            {CS04profs[selectedProfIndex].syllabusLink === 0 && (
+              <>
+              <span>{CS04profs[selectedProfIndex].description}</span>
               </>
             )}
             {CS04profs[selectedProfIndex].syllabusLink !== null && (
