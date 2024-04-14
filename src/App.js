@@ -8,6 +8,7 @@ function App() {
     {
       name: 'Jane Doe',
       course_code: 'CS05',
+      course_name: 'Introduction to Computer Science',
       description: 'This course covers basic programming concepts at Harvey Mudd.',
       syllabusLink: 'janeDoeSyllabus.pdf',
       syllabusTxt: 'janeDoeSyllabus.txt'
@@ -15,6 +16,7 @@ function App() {
     {
       name: 'John Doe',
       course_code: 'CS04',
+      course_name: 'Intro to Comp Sci for Non-majors',
       description: 'This course covers basic programming concepts at Pitzer.',
       syllabusLink: 'johnDoeSyllabus.pdf',
       syllabusTxt: 'johnDoeSyllabus.txt'
@@ -22,6 +24,7 @@ function App() {
     {
       name: 'Jack Doe',
       course_code: 'CS51',
+      course_name: 'Intro to CS with Lab',
       description: 'This course has no information on it.',
       syllabusLink: 0
     }
@@ -75,13 +78,65 @@ function App() {
     })();
   }, [CS04profs, selectedProfIndex]);
 
+  // search handlers
+
+  const [isOpen, setIsOpen] = useState(false);
+  const [searchTerm, setSearchTerm] = useState('');
+  
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const handleSearch = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
+  // file submission
+
+  const [file, setFile] = useState()
+
+  function handleChange(event) {
+    setFile(event.target.files[0])
+  }
+
+const [fileFeedback, setFileFeedback] = useState('');
+const handleFileSubmit = (event) => {
+    event.preventDefault();  // Prevent the default form submission behavior
+
+    if (!file) {
+        setFileFeedback('Please select a file before clicking.');
+    } else {
+        setFileFeedback(`Thank you for submitting your file named ${file.name}`);
+    }
+};
+
+
   return (
     <div className="App">
       <header className="App-header">
         <h2>COURSE CRUSHER >:3C</h2>
+  <div className="dropdown">
+  <input
+          type="text"
+          placeholder="Search..."
+          value={searchTerm}
+          onChange={handleSearch}
+        />
+      <button className="dropbtn" onClick={toggleDropdown}>Dropdown</button>
+      <div id="myDropdown" className={`dropdown-content ${isOpen ? 'show' : ''}`}>
+        
+        <a href="#about">About</a>
+        <a href="#base">Base</a>
+        <a href="#blog">Blog</a>
+        <a href="#contact">Contact</a>
+        <a href="#custom">Custom</a>
+        <a href="#support">Support</a>
+        <a href="#tools">Tools</a>
+      </div>
+    </div>
       </header>
       <body>
-        <p className='text'> Here is some text.</p>
+        <p className='text'> {courseName}</p>
         <div className='main'>
           <div className="lefthalf"> 
             {CS04profs.map((CS04prof, index) => (
@@ -90,26 +145,30 @@ function App() {
                   onClick={() => handleProfSelection(index)}
                   className={selectedProfIndex === index ? 'selected' : 'unselected'}
                 >
-                  {CS04prof.course_code}: {CS04prof.name}
+                  {CS04prof.name}
                 </button>
             </div>
               ))}
           </div>
           <div className="righthalf"> 
-            <h2>{CS04profs[selectedProfIndex].course_code} {courseName}<br></br>{CS04profs[selectedProfIndex].name}</h2>
+            <h2>{CS04profs[selectedProfIndex].course_code} {CS04profs[selectedProfIndex].course_name}<br></br>{CS04profs[selectedProfIndex].name}</h2>
             {CS04profs[selectedProfIndex].syllabusLink !== 0 && (
               <>
               <span>{CS04profs[selectedProfIndex].description}<br></br><p></p>Here is the <span onClick={() => openSyllabusPreview(CS04profs[selectedProfIndex].syllabusLink)} className = "link">syllabus</span>.</span>
               <p>{aiText}</p>
               </>
             )}
-            {CS04profs[selectedProfIndex].syllabusLink === 0 && (
+            {CS04profs[selectedProfIndex].syllabusLink !== null && (
               <>
-              <span>{CS04profs[selectedProfIndex].description}<br></br><p></p>Feel free to upload a syllabus for this course if you have taken it. </span>
-              <p>Upload File</p>
-              <br></br>
-              <button className='upload'>Submit</button>
-              </>
+              <span><br></br><p></p>Feel free to upload a syllabus for this course if you have taken it. </span>
+              <form onSubmit={handleFileSubmit}>
+    <p>Upload File</p>
+    <input type="file" onChange={handleChange} />
+    <br></br>
+    <button type="submit" className='upload'>Submit</button>
+    <p>{fileFeedback}</p>  {/* Display the feedback message here */}
+</form>
+</>
             )}
             
           </div>
