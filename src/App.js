@@ -131,6 +131,7 @@ const handleFileSubmit = (event) => {
       <header className="App-header">
         <h2>COURSE CRUSHER >:3C</h2>
         <div className="dropdown">
+          {/* search bar */}
         <input
                 type="text"
                 placeholder="Search..."
@@ -138,10 +139,10 @@ const handleFileSubmit = (event) => {
                 onChange={handleSearch}
                 onClick={toggleDropdown}
               />
-            <button className="dropbtn" >Dropdown</button>
+            <button className="dropbtn" >Select</button>
             <div id="myDropdown" className={`dropdown-content ${isOpen ? 'show' : ''}`}>
-              {filteredItems.map((item, index) => (
-                <a key={index} onClick={toggleDropdown}>{item.name}</a>
+              {filteredItems.map((item) => (
+                <button onFocus={handleSearch} onClick={toggleDropdown}>{item.name}</button>
               ))}
             </div>
           </div>
