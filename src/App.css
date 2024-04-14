@@ -1,5 +1,6 @@
-button {
-    background-color: rgb(240, 229, 216); /* Green */
+/* unselected sidebar option */
+.unselected {
+    background-color: rgb(240, 229, 216); 
     border: none;
     color: black;
     padding: 15px 15px;
@@ -8,19 +9,44 @@ button {
     text-decoration: none;
     display: inline-block;
     font-size: calc(10px + 2vmin);
+    cursor: pointer;
 }
 
+/* submit button */
+.upload {
+  background-color: rgb(240, 229, 216); 
+    border: none;
+    color: black;
+    padding: 15px 15px;
+    width: 20%;
+    text-align: center;
+    margin: 10px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: calc(10px + 2vmin);
+}
+
+/* manually made text look like a link */
 .link {
   color: blue; /* Set the link text color */
   text-decoration: underline; /* Add underline */
   cursor: pointer; /* Change cursor to pointer on hover */
 }
 
+/* toggled selected button on side menu */
 .selected {
   background-color: rgb(227, 200, 168);
   color: black;
+  border: none;
+  padding: 15px 15px;
+  width: 100%;
+  text-align: left;
+  text-decoration: none;
+  display: inline-block;
+  font-size: calc(10px + 2vmin);
+  cursor: pointer;
 }
-
+/* entire webpage... lol*/
 .App {
   text-align: left;
 }
@@ -35,7 +61,7 @@ button {
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
+/* Top section */
 .App-header {
   background-color: #282c34;
   min-height: 20%;
@@ -44,22 +70,24 @@ button {
   flex-direction: column;
   /* align-items: center;
   justify-content: center; */
-  font-size: calc(10px + 2vmin);
+  font-size: calc(100px + 2vmin);
   color: white;
+}
+/* header text - used for app title */
+h2 {
+  font-size: calc(15px + 2vmin);
+  padding-top: 0pt;
 }
 
 
-
+/* body text */
 .text {
   color: "69, 69, 69";
   font-size: calc(10px + 2vmin);
   padding-left: 5%;
 }
 
-h2 {
-  font-size: calc(10px + 2vmin);
-  padding-top: 0pt;
-}
+
 
 @keyframes App-logo-spin {
   from {
@@ -76,29 +104,33 @@ h2 {
   display: flex;
   flex-direction: row; /* Change to row to align items side by side */
   justify-content: space-between; /* Add space between items */
-  align-items: center; /* Center items vertically */
+  align-items: top; /* Center items vertically */
   width: 85%; /* Ensure the container spans the full width of its parent */
   margin: 0 auto; /* Center the container horizontally */
   padding: 10pt 30pt; /* Add padding 10pt to the top and bottom, 30pt to the left and right */
-  font-size: calc(10px + 2vmin);
+  font-size: calc(8px + 2vmin);
   color: black;
 }
 
+/* sidemenu part w/ profs */
 .lefthalf {
   width: 30%;
-  height: 400px;
+  height: 100%;
   padding: 15pt;
   background: rgb(240, 229, 216);
 }
 
+/* main course description section */
 .righthalf {
   width: 70%; /* Adjust width as needed */
-  height: 400px;
+  height: 100%;
   padding: 0pt 30pt;
   background: white;
+  margin-bottom: 30px;
 }
 
 /* search bar classes (w3school pasted */
+/* haven't used this... lol */
 
 .topnav {
   overflow: hidden;

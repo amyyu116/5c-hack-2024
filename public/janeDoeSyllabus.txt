@@ -1,0 +1,43 @@
+Introduction to Computer Science with Python
+Professor Jane Doe
+
+Course Description
+This course serves as an introduction to computer science concepts using the Python programming language. Students will learn fundamental programming concepts, problem-solving techniques, and software development skills. Emphasis will be placed on developing computational thinking and understanding the principles of computer science through hands-on programming exercises and projects.
+
+Course Objectives
+- Understand basic programming concepts such as variables, data types, and control structures
+- Learn how to write, test, and debug Python programs
+- Explore fundamental algorithms and data structures
+- Develop problem-solving skills through programming challenges
+- Understand the importance of algorithmic efficiency and performance
+- Gain practical experience in software development and coding practices
+- Apply computer science concepts to real-world problems and projects
+
+Topics Covered
+1. Introduction to Python programming language
+2. Variables, data types, and basic operations
+3. Control structures: conditionals and loops
+4. Functions and modular programming
+5. Lists, tuples, and dictionaries
+6. File handling and input/output operations
+7. Object-oriented programming concepts
+8. Recursion and recursive algorithms
+9. Searching and sorting algorithms
+10. Introduction to algorithm analysis and complexity
+11. Introduction to computational thinking and problem-solving strategies
+12. Project: Implementation of a simple game or application using Python
+
+Grading
+- Weekly programming assignments to reinforce concepts learned in class (45%)
+- Quizzes and exams to assess understanding of course material (20%)
+- Participation in coding labs and classroom activities (10%)
+- Final project: Design and implementation of a Python program demonstrating mastery of course concepts (25%)
+
+Prerequisites
+- None. This course is designed for students with no prior programming experience.
+
+Recommended Resources
+- Textbook: "Python Programming: An Introduction to Computer Science" by John Zelle
+- Online tutorials and resources for learning Python programming
+- Python documentation and community forums for reference and support
+
