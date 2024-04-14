@@ -1,3 +1,15 @@
+button {
+    background-color: rgb(240, 229, 216); /* Green */
+    border: none;
+    color: black;
+    padding: 15px 15px;
+    width: 100%;
+    text-align: left;
+    text-decoration: none;
+    display: inline-block;
+    font-size: calc(10px + 2vmin);
+}
+
 .App {
   text-align: left;
 }
