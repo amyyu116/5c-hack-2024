@@ -35,6 +35,8 @@ function App() {
 
   const handleProfSelection = (index) => {
     setSelectedProfIndex(index);
+    setFile(null);
+    setFileFeedback('');
   };
 
   // pdf viewer function
@@ -129,7 +131,7 @@ const handleFileSubmit = (event) => {
     <div className="App">
       {/* header */}
       <header className="App-header">
-        <h2>COURSE CRUSHER >:3C</h2>
+        <h2>COURSE CRUSHER >:3c</h2>
         <div className="dropdown">
           {/* search bar */}
         <input
@@ -177,14 +179,14 @@ const handleFileSubmit = (event) => {
             )}
             {CS04profs[selectedProfIndex].syllabusLink !== null && (
               <>
-              <span><br></br><p></p>Feel free to upload a syllabus for this course if you have taken it. </span>
+              <div className="button-container">
+              <span><br></br><p></p>Feel free to upload a syllabus for this course if you have taken it.<br></br><p></p></span>
               <form onSubmit={handleFileSubmit}>
-    <p>Upload File</p>
-    <input type="file" onChange={handleChange} />
-    <br></br>
+    <input type="file" onChange={handleChange} key={selectedProfIndex} /><br></br>
     <button type="submit" className='upload'>Submit</button>
     <p>{fileFeedback}</p>  {/* Display the feedback message here */}
 </form>
+</div>
 </>
             )}
             

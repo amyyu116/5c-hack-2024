@@ -15,7 +15,7 @@
 
 /* submit button */
 .upload {
-    background-color: rgb(195, 196, 196); 
+    background-color: rgb(201, 227, 245); 
     border: none;
     color: rgb(24, 25, 25);
     padding: 10px 14px;
@@ -24,13 +24,25 @@
     text-decoration: none;
     display: inline-block;
     font-size: calc(7px + 2vmin);
+    cursor: ;
+}
+
+/* Container for the submit button */
+.button-container {
+  background-color: rgb(231, 231, 231); 
+  width: 100%;
+  padding: 12px 15px;
+  display: inline-block; 
+  margin-top: 30px;
+  margin-bottom: 5px;
+  border-radius: 4px; 
 }
 
 /* manually made text look like a link */
 .link {
-  color: blue; /* Set the link text color */
-  text-decoration: underline; /* Add underline */
-  cursor: pointer; /* Change cursor to pointer on hover */
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 /* toggled selected button on side menu */
@@ -68,8 +80,9 @@
 /* header text - used for app title */
 h2 {
   font-size: calc(14px + 2vmin);
-  padding-top: 0pt;
-  margin-top: 0pt;
+  padding: 0pt;
+  margin: 0pt;
+  margin-left: 1.5%;
   font-family: Verdana, sans-serif;
 }
 
@@ -90,12 +103,12 @@ h2 {
 .main {
   background-color: white;
   display: flex;
-  flex-direction: row; /* Change to row to align items side by side */
-  justify-content: space-between; /* Add space between items */
-  align-items: top; /* Center items vertically */
-  width: 85%; /* Ensure the container spans the full width of its parent */
-  margin-left: 0 auto; /* Center the container horizontally */
-  padding: 10pt 30pt; /* Add padding 10pt to the top and bottom, 30pt to the left and right */
+  flex-direction: row; 
+  justify-content: space-between;
+  align-items: top; 
+  width: 85%; 
+  margin-left: 0 auto;
+  padding: 10pt 30pt;
   font-size: calc(8px + 2vmin);
   color: rgb(46, 47, 50);
 }
@@ -110,7 +123,7 @@ h2 {
 
 /* main course description section */
 .righthalf {
-  width: 70%; /* Adjust width as needed */
+  width: 70%;
   height: 100%;
   padding: 0pt 30pt;
   background: white;
@@ -134,11 +147,10 @@ h2 {
 }
 input {
   height: 50px; 
+  width: 225px;
 }
-/* The search field */
 
-
-/* The container <div> - needed to position the dropdown content */
+/* The container for the dropdown content */
 .dropdown {
   position: relative;
   display: inline-block;
