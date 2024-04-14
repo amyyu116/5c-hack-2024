@@ -77,12 +77,15 @@
   font-size: calc(8px + 2vmin);
   color: white;
 }
+
+.title {
+  margin-left: 1.5%;
+}
 /* header text - used for app title */
 h2 {
   font-size: calc(14px + 2vmin);
   padding: 0pt;
   margin: 0pt;
-  margin-left: 1.5%;
   font-family: Verdana, sans-serif;
 }
 

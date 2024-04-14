@@ -131,7 +131,7 @@ const handleFileSubmit = (event) => {
     <div className="App">
       {/* header */}
       <header className="App-header">
-        <h2>COURSE CRUSHER >:3c</h2>
+        <h2 className="title">COURSE CRUSHER >:3c</h2>
         <div className="dropdown">
           {/* search bar */}
         <input
